@@ -1,38 +1,69 @@
-.App {
+.agatha-books {
+  padding-top: 5rem;
+}
+
+.agatha-info {
   text-align: center;
+  font-size: 1rem;
+  font-weight: bold
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-container {
+  /* background-image: url("https://images.pexels.com/photos/1655901/pexels-photo-1655901.jpeg?auto=compress&cs=tinysrgb&w=1600"); */
+  background-image: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.6)), url("https://images.pexels.com/photos/3113617/pexels-photo-3113617.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-page {
+  height: 100%;
+  text-align: center;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main-title-text {
+  padding-top: 3rem;
+  font-size: 5rem;   
+  padding-bottom: 1rem; 
+}
+
+.start-btn {
+  margin-top: 3rem;
+  background-color: #212529 !important;
+}
+
+.book-list-page {
+  background-image: url("https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&w=1600");
+}
+
+.book-list-title {
+  padding: 3rem;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.book-list-container {
+  padding: 1rem;
+  margin-left: 1rem;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+  background-color:#212529
+}
+
+.book-link {
+  text-decoration: underline lightblue;
+  color: white;
+}
+
+.book-link:hover {
+  color: red;
 }
