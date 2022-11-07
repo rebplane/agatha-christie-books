@@ -65,5 +65,21 @@
 }
 
 .book-link:hover {
-  color: red;
+  color: lightblue;
+}
+
+.book-info-page {
+  height: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.book-info-title {
+  padding: 1rem;
+}
+
+.book-info-summary {
+  width: 70%;
+  margin: auto;
 }
