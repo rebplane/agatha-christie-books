@@ -8,7 +8,7 @@ function Header() {
         <a className="navbar-brand" href="/">Agatha Christie Booklist</a>
         <div className="navbar-nav">
             <a className="nav-item nav-link" href="/books/all">All Books</a>
-            <a className="nav-item nav-link" href="/">My Books</a>
+            <a className="nav-item nav-link" href="/booklist/test">My Books</a>
         </div>
     </nav>
   )

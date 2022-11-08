@@ -8,7 +8,7 @@
   font-weight: bold
 }
 
-.home-container {
+.home-container, .login-container {
   /* background-image: url("https://images.pexels.com/photos/1655901/pexels-photo-1655901.jpeg?auto=compress&cs=tinysrgb&w=1600"); */
   background-image: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.6)), url("https://images.pexels.com/photos/3113617/pexels-photo-3113617.jpeg?auto=compress&cs=tinysrgb&w=1600");
   height: 100%;
@@ -16,10 +16,14 @@
   background-size: 100% 100%;
 }
 
-.home-page {
+.home-page, .login-page {
   height: 100%;
   text-align: center;
   color: black;
+}
+
+.login-title {
+  padding-top: 5rem;
 }
 
 .main-title-text {
@@ -35,6 +39,9 @@
 
 .book-list-page {
   background-image: url("https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-size: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .book-list-title {
@@ -82,4 +89,35 @@
 .book-info-summary {
   width: 70%;
   margin: auto;
+  margin-top: 1rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+label {
+  margin-left: 0.5rem;
+}
+
+.login-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.redirect-to-reg {
+  padding-top: 2rem;
+}
+
+.book-info-container {
+  width: 50%;
+  margin: auto;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;  
 }
