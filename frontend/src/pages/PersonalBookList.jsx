@@ -1,9 +1,9 @@
 import {React, useState, useEffect} from 'react'
 import { useParams, Link } from "react-router-dom";
 import { getUser } from '../api/auth';
-import { getReadBooksByUsername } from '../api/books';
+import { deleteBook, getReadBooksByUsername } from '../api/books';
 import Header from '../components/Header';
-import PersonalBookAdd from '../components/PersonalBookAdd';
+import PersonalBookDelete from '../components/PersonalBookDelete';
 
 function PersonalBookList() {
 
@@ -14,14 +14,15 @@ function PersonalBookList() {
     
     useEffect(() => {
         getUser(setUser);
-        console.log(user)
-        console.log(username)
-        console.log(user==username)
-        if (user == username) {
+        if (user === username) {
             setIsUser(true)
         }
         getReadBooksByUsername(setBooks, username);
     }, [user])
+
+    function deleteNewBook(book_id) {
+        deleteBook(book_id, setBooks, username);
+    }
 
     return (
       <div className='book-list-page'>
@@ -33,7 +34,7 @@ function PersonalBookList() {
       <div className="book-list-container">
           {books.map((book) => {
               return (
-                  <PersonalBookAdd id={book._id} key={book._id} book={book} isUser={isUser}></PersonalBookAdd>
+                  <PersonalBookDelete id={book._id} key={book._id} deleteNewBook={deleteNewBook} book={book} isUser={isUser} ></PersonalBookDelete>
               )
           })}
       </div>

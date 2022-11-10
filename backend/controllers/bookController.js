@@ -46,7 +46,7 @@ const postReadBooks = asyncHandler(async(req, res) => {
 })
 
 // @desc Remove a book from the user's read list
-// @route DELETE /api/books/remove
+// @route PUT /api/books/remove
 // @access Private
 const removeReadBooks = asyncHandler(async(req, res) => {
     // Check if the user is authenticated first

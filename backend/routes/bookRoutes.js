@@ -8,7 +8,7 @@ router.get('/info/:id', getBookById)
 
 router.put('/add', postReadBooks)
 
-router.delete('/remove', removeReadBooks)
+router.put('/remove', removeReadBooks)
 
 router.get('/read/:username', getReadBooks)
 

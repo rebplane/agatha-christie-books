@@ -48,7 +48,6 @@ export function getUser(setUser) {
     axios.post("/api/accounts/auth", {credentials: 'include'})
     .then(res => {
         if (res.status == 200) {
-            console.log("hi!")
             setUser(res.data.username)
         }
     })
