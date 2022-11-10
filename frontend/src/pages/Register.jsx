@@ -27,6 +27,7 @@ function Register() {
     const navigate = useNavigate()
 
     useEffect(() => {
+        console.log(isSuccess)
         if (isSuccess) {
             navigate(`/booklist/${user.username}`)
         }

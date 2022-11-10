@@ -5,9 +5,13 @@ export function register(username, email, password, setSuccess, setError) {
         username: username,
         email: email,
         password: password,
-    }).then(res => setSuccess(true))
-    .catch(() => {
-        setError("Username or password already exists")
+    }).then((res) => {
+        if (res.status == 200) {
+            setSuccess(true)
+        }
+    })
+    .catch((err) => {
+        setError(err.response.data.error)
     })
 
 }

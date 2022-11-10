@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler')
 const passport = require('passport')
 const User = require('../models/userModel')
+const validator = require("email-validator");
 
 // @desc Registers the user
 // @route GET /api/accounts/register
@@ -11,16 +12,31 @@ const register = asyncHandler(async (req, res) => {
         email: req.body.email.toLowerCase(),
     })
 
-    User.register(newUser, req.body.password, function(err, user) {
-        if (err) {
-            console.log(err);
-            res.status(400).json({message: "Username or email already exists"})
-        } else {
-            passport.authenticate("local")(req, res, function() {
-                res.status(200).json({message:"Successfully registered user", user: req.body.username})
-            });
-        }
-    })
+    if (req.body.username.length < 3) {
+        res.status(400).json({error: "Username must be at least 3 characters long"})
+    }
+    
+    else if (req.body.password.length < 8) {
+        res.status(400).json({error: "Password must be at least 8 characters long"})
+    }
+
+    else if (!validator.validate(req.body.email)) {
+        res.status(400).json({error: "Please enter a valid email"})
+    }
+
+    else {
+
+        User.register(newUser, req.body.password, function(err, user) {
+            if (err) {
+                console.log(err);
+                res.status(400).json({error: "Username or email already exists"})
+            } else {
+                passport.authenticate("local")(req, res, function() {
+                    res.status(200).json({message:"Successfully registered user", user: req.body.username})
+                });
+            }
+        })
+    }
 })
 
 // @desc Logs in the user
