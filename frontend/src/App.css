@@ -46,7 +46,8 @@ html, body {
 
 .book-list-page {
   background-image: url("https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&w=1600");
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   height: 100%;
   overflow: auto;
 }
@@ -125,4 +126,12 @@ label {
 
 .book-info-container {
   padding-bottom: 5rem;
+}
+
+.btn-add {
+  background-color: #545252 !important;
+}
+
+.book-list-change {
+  text-align: center;
 }

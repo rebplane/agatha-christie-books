@@ -6,3 +6,7 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
+.my-books-button {
+    cursor: pointer;
+}

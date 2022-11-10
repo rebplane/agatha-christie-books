@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getBookInfo } from '../api/books';
 import Header from '../components/Header';
 
-function BookInfo(props) {
+function BookInfo() {
 
   const [book, setBook] = useState({})
 

@@ -7,6 +7,7 @@ import BookInfo from './pages/BookInfo';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PersonalBookList from './pages/PersonalBookList';
+import PersonalBookListUnread from './pages/PersonalBookListUnread';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path='books/info/:id' element={<BookInfo/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
-        <Route path='/booklist/:name' element={<PersonalBookList/>}></Route>
+        <Route path='/booklist/:username' element={<PersonalBookList/>}></Route>
+        <Route path='/booklist/unread/:username' element={<PersonalBookListUnread/>}></Route>
       </Routes>
     </BrowserRouter>
   );

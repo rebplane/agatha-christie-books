@@ -39,6 +39,7 @@ export function isAuthenticated(setUser, setClicked) {
         setClicked(true)
     })
     .catch((err) => {
+        setClicked(true)
         console.log(err)
     })
 }

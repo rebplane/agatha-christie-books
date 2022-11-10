@@ -17,6 +17,9 @@ function Header() {
     useEffect(() => {
       if (user) {
         navigate(`/booklist/${user}`)
+      } 
+      if (clicked) {
+        navigate('/login')
       }
     }, [clicked])
 
