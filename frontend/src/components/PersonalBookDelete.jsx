@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function PersonalBookDelete({book}) {
+function PersonalBookDelete({book, isUser}) {
 return (
     <div className='book-container' key={book._id}>
-        <button className="btn btn-sm btn-dark btn-custom btn-add">Delete</button>
+        {isUser && <button className="btn btn-sm btn-dark btn-custom btn-add">Delete</button>}
         <Link className='book-link' to={`/books/info/${book._id}`}>
             <p>{book.uk_title}</p>
         </Link>

@@ -50,7 +50,7 @@ function Login() {
                             <label htmlFor="password">Password:</label>
                             <input type="password" onChange={onChange} className="form-control" name="password" value={user.password} id="password" aria-describedby="emailHelp" placeholder="Enter password"></input>
                         </div>
-                        <button className="btn start-btn btn-lg btn-secondary" onClick={onClick}>Register</button>
+                        <button className="btn start-btn btn-lg btn-secondary" onClick={onClick}>Login</button>
                     </form>
                     <p className="redirect-to-reg">Don't have an account yet? <a href="/register">Register here</a></p>
                 </div>
