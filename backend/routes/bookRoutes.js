@@ -10,8 +10,8 @@ router.put('/add', postReadBooks)
 
 router.delete('/remove', removeReadBooks)
 
-router.get('/books/read/:username', getReadBooks)
+router.get('/read/:username', getReadBooks)
 
-router.get('/books/unread/:username', getUnreadBooks)
+router.get('/unread/:username', getUnreadBooks)
 
 module.exports = router
