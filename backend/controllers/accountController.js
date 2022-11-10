@@ -59,8 +59,21 @@ const logout = asyncHandler(async (req, res) => {
     });
 })
 
+// @desc Checks if user is authenticated
+// @route POST /api/accounts/auth
+// @access Public
+const isLoggedIn = asyncHandler(async (req, res) => {
+    if (req.user) {
+        res.status(200).json({username: req.user['username']})
+    } else{
+        res.status(403).json({message: "Not logged in"})
+    }
+})
+
+
 module.exports = {
     register,
     login,
-    logout
+    logout,
+    isLoggedIn
 }

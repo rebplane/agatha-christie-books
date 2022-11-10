@@ -31,7 +31,7 @@ function BookInfo(props) {
         <div>
             {book.us_title && <p>Also known as "{book.us_title}" in the US.</p>}
         </div>
-    </div>
+      </div>
     <footer>Summary from <a href="https://www.agathachristie.com/en/stories">www.agathachristie.com</a></footer>
     </div>
   )
