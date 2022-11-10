@@ -10,7 +10,6 @@ function Register() {
         username: '',
         email: '',
         password: '',
-        password2: ''
     })
 
     let [error, setError] = useState([])
@@ -27,7 +26,6 @@ function Register() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        console.log(isSuccess)
         if (isSuccess) {
             navigate(`/booklist/${user.username}`)
         }
@@ -60,10 +58,6 @@ function Register() {
                         <div className="form-group">
                             <label htmlFor="password">Password:</label>
                             <input type="password" value={user.password} className="form-control" id="password" name="password" aria-describedby="emailHelp" placeholder="Enter password" onChange={onChange}></input>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password2">Re-enter password:</label>
-                            <input type="password2" value={user.password2} className="form-control" id="password2" name="password2" aria-describedby="emailHelp" placeholder="Enter password" onChange={onChange}></input>
                         </div>
                         <button className="btn start-btn btn-lg btn-secondary" type="submit" onClick={onClick}>Register</button>
                     </form>

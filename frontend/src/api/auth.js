@@ -16,10 +16,28 @@ export function register(username, email, password, setSuccess, setError) {
 
 }
 
-export function isAuthenticated() {
-    console.log("test")
+export function login(username, password, setSuccess, setError) {
+    axios.post("/api/accounts/login/", {
+        username: username,
+        password: password,
+    }).then((res) => {
+        if (res.status == 200) {
+            setSuccess(true)
+        }
+    })
+    .catch((err) => {
+        setError("Username or password was invalid.") 
+    })
+}
+
+export function isAuthenticated(setUser, setClicked) {
     axios.post("/api/accounts/auth", {credentials: 'include'})
-    .then(res => console.log(res.status))
+    .then(res => {
+        if (res.status == 200) {
+            setUser(res.data.username)
+        }
+        setClicked(true)
+    })
     .catch((err) => {
         console.log(err)
     })
