@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler')
 const Book = require('../models/bookModel')
+const User = require('../models/userModel')
 
 const DESC = 'desc'
 const ASC = 'asc'
@@ -25,12 +26,49 @@ const getBookById = asyncHandler(async (req, res) => {
     res.status(200).json(book)
 })
 
-// Filter books by character
-// Search book name
-// Chronologically
-// Alphabetically
+// @desc Add a book to the user's read list
+// @route PUT /api/books/add
+// @access Private
+const postReadBooks = asyncHandler(async(req, res) => {
+    // Check if the user is authenticated first
+    if (req.user) {
+        const book = await Book.findById(req.body.book_id)
+        var user = await User.findById(req.user.id)
 
+        user.booksRead.pull(book._id)
+        user.booksRead.push(book._id)
+        user.save()
+        res.status(201).json({message: "Added new book"})
+    } 
+    else {
+        res.status(403).json({message: "Not logged in"})
+    }
+})
+
+// @desc Remove a book from the user's read list
+// @route DELETE /api/books/remove
+// @access Private
+const removeReadBooks = asyncHandler(async(req, res) => {
+
+})
+
+// @desc Get a user's read books
+// @route GET /api/books/read/:username
+// @access Public
+const getReadBooks = asyncHandler(async(req, res) => {
+})
+
+// @desc Get a user's unread books
+// @route GET /api/books/unread/:username
+// @access Public
+const getUnreadBooks = asyncHandler(async(req, res) => {
+
+})
 module.exports = {
     getBooks,
     getBookById,
+    postReadBooks,
+    removeReadBooks,
+    getReadBooks,
+    getUnreadBooks
 }

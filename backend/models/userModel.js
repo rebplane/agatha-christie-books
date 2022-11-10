@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
         required: false,
         unique: true
     },
-    read: {
+    booksRead: {
         type: [{
             type: mongoose.Schema.Types.ObjectId, 
             ref: 'Book'

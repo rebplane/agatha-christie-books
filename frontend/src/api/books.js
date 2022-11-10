@@ -6,6 +6,6 @@ export function getBooks(setBooks) {
 }
 
 export function getBookInfo(setBook, book_id) {
-    axios.get(`/api/books/${book_id}`)
+    axios.get(`/api/books/info/${book_id}`)
     .then((res) => setBook(res.data))
 }
