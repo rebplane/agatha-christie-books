@@ -2,12 +2,11 @@ import {React, useState, useEffect} from 'react'
 import { useParams, Link } from "react-router-dom";
 import { getUnreadBooksByUsername } from '../api/books';
 import Header from '../components/Header';
-import PersonalBookAdd from '../components/PersonalBookAdd';
+import PersonalBookDelete from '../components/PersonalBookDelete';
 
 function PersonalBookListUnread() {
 
     const username = useParams().username
-    console.log(username)
     const [books, setBooks] = useState([]);
     
     useEffect(() => {
@@ -24,7 +23,7 @@ function PersonalBookListUnread() {
       <div className="book-list-container">
           {books.map((book) => {
               return (
-                  <PersonalBookAdd id={book._id} key={book._id} book={book}></PersonalBookAdd>
+                  <PersonalBookDelete id={book._id} key={book._id} book={book}></PersonalBookDelete>
               )
           })}
       </div>

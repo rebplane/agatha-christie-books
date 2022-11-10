@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// todo only render add button if it's the user's booklist
+
 function PersonalBookAdd({book}) {
   return (
     <div className='book-container' key={book._id}>
