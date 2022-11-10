@@ -10,7 +10,7 @@ const passport = require("passport")
 const app = express()
 
 app.use(session({
-    secret: "3DET5l!U#ewjmDKRnKwzjTjPodGYS7",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
 }))
