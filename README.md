@@ -4,6 +4,7 @@ Keep track of which Agatha Christie books you have read and share them with othe
 
 Built with Node.js and React.
 
-Site (currently down since Heroku removed free tier, sorry :( ): https://agatha-christie-booklist.herokuapp.com/
+# Currently down since Heroku removed free tier, sorry :( 
+Site: https://agatha-christie-booklist.herokuapp.com/
 
 Or take a look at my booklist here: https://agatha-christie-booklist.herokuapp.com/booklist/rebplane
